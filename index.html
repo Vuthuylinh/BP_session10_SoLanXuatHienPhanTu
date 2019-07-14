@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dem so lan xuat hien cua phan tu trong mang</title>
+</head>
+<body>
+<script>
+    // function countAppearance(array, number) {
+    //     let count = 0;
+    //     let position= array.indexOf(number);
+    //     if(position>-1){
+    //         count++;
+    //     }
+    //     for(let i=position -1;i>0; i--){
+    //         if(array[i]===number){
+    //             count++;
+    //         }
+    //     }
+    //     for (let i=position+1; i<array.length; i++){
+    //         if (array[i]=== number){
+    //             count++;
+    //         }
+    //     }
+    //     return count;
+
+    // }
+
+    function countAppearance(array, number){
+        let count =0;
+        for(let i=0; i<array.length; i++){
+            if (number===array[i]){
+                count++;
+            }
+        }
+        return count;
+    }
+    function displayArray(array) {
+        for(let i=0; i<array.length;i++){
+            document.write(array[i]+ "; ");
+
+        }
+    }
+    function createArray() {
+        let array = [];
+        for (let i = 0; i < 100; i++) {
+            array[i] = Math.floor(Math.random() * 100);
+            array.push(array[i]);
+            array.sort();
+        }
+        return array;
+    }
+    let number= parseInt(prompt("Enter a number: "));
+
+    let newArray =createArray();
+    displayArray(newArray);
+    document.write("<br>");
+   let count1= countAppearance(newArray,number);
+document.write(number + " appear "+ count1 + " time. ");
+</script>
+</body>
+</html>
